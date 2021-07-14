@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         catch (Exception e){
             e.printStackTrace();
         }
+       ClearScreen();
 
     }
 
@@ -71,5 +72,9 @@ public class MainActivity extends AppCompatActivity {
         return byteArray;
     }
 
+    private void ClearScreen() {
+        descripcion.setText("");
+        //view5.setText("");
+    }
 
 }
