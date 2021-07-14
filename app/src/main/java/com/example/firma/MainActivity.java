@@ -3,6 +3,7 @@ package com.example.firma;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ import java.io.ByteArrayOutputStream;
 public class MainActivity extends AppCompatActivity {
 
     EditText descripcion;
-    Button btn_guardar;
+    Button btn_guardar, btn_galeria;
     View view5;
 
     @Override
@@ -27,12 +28,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         descripcion = (EditText) findViewById(R.id.txtdescripcion);
         view5 = (View) findViewById(R.id.viewfirma);
-        btn_guardar = (Button)findViewById(R.id.btnguardar);
 
+        btn_guardar = (Button)findViewById(R.id.btnguardar);
         btn_guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 savefirma();
+            }
+        });
+
+        btn_galeria = (Button)findViewById(R.id.btngaleria);
+        btn_galeria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), GalleryActivity.class);
+                startActivity(intent);
             }
         });
     }
